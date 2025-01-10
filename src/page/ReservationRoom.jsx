@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import GlobalStyle from "../style/GlobalStyle";
 import RoomList from "./RoomList";
@@ -87,7 +88,23 @@ const handleSubmit = (e) => {
     e.preventDefault();
   };
 
+
 function ReservationRoom() {
+    const [checkRoom, setCheckRoom] = useState([]);
+    
+    const handleRoomCheck = async(e) => {
+        e.preventDefault();
+        const response =await fetch(
+            "http://172.30.1.28:8080/api/rooms/available",
+            {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization : 'Bearer ' + sessionStorage.getItem("token")
+                },
+            }
+        ).json();
+    };
     return (
         <>
             <GlobalStyle />
@@ -95,7 +112,7 @@ function ReservationRoom() {
                 원하는 강의실을 찾아주세요
             </Desc>
             <Wrapper>
-                <Filter onSubmit={handleSubmit}>
+                <Filter onSubmit={handleRoomCheck}>
                     <FilterInput type="date" />
                     <FilterSelect class="building">
                         <option value>건물 선택</option>

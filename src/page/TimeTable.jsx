@@ -17,6 +17,8 @@ function Timetable() {
   const[building, setBuilding] = useState("");
   const[roomNumber, setRoomNumber] = useState("");
 
+  const [myTimeTable, setTimeTable] = useState([]);
+
   const timetable = Array.from({ length: 14 }, (_, index) => index + 9);
 
   // 셀 선택 초기화
@@ -94,24 +96,27 @@ function Timetable() {
         }
     )
 };
+const handleMySpaceCheck = async () => {
+    const response = await fetch("http://172.30.1.28:8080/api/timetable", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+      },
+    });
 
-const handleMySpaceCheck = async(e) => {
-    const response =await fetch(
-        "http://172.30.1.28:8080/api/timetable",
-        {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization : 'Bearer ' + sessionStorage.getItem("token")
-            },
-        }
-    ).json();
-};
+    return response.ok
+      ? response.json()
+      : Promise.reject("Failed to fetch data");
+  };
 
-useEffect(() => {
-    const res = handleMySpaceCheck();
-},[])
+  useEffect(() => {
+    handleMySpaceCheck()
+      .then((res) => setTimeTable(res)) // 필요한 작업 수행
+      .catch((err) => console.error(err));
+  }, []);
 
+  console.log(myTimeTable);
   return (
     <div className="timetable-container">
       <div className="timetable-section">
