@@ -10,13 +10,14 @@ import MySpace from "./page/MySpace";
 import TimeTable from "./page/TimeTable"
 
 function App(props) {
+  
   return (
     <BrowserRouter>
     <NavBar />
     <Routes>
       <Route index element={<MainPage />} />
-      {/* <Route path="/login" element={<Login />} /> */}
-      {/* <Route path="/signUp" element={<SignUp />} /> */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/signUp" element={<SignUp />} />
       <Route path="/MySapce" element={<MySpace />} />
       <Route path="/AIRRROOM" element={<MainPage />} />
       <Route path="/ai-recommend" element={<AiRecommend />} />

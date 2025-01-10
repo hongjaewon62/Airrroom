@@ -71,7 +71,7 @@ h1 {
     align-self: flex-start;
 }
 
-.class-input, .time-select, .location-input {
+.class-input, .time-select, .location-input, .room-input {
     padding: 0.8rem;
     border: none;
     border-radius: 6px;
