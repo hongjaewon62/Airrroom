@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import GlobalStyle from "../style/GlobalStyle";
@@ -84,27 +84,45 @@ const SubmitStyled = styled.input`
     cursor: pointer;
 `;
 
-const handleSubmit = (e) => {
-    e.preventDefault();
+function ReservationRoom() {
+    const [checkRoom, setCheckRoom] = useState([])
+    const [date, setDate] = useState("");
+    const [building, setBuilding] = useState("");
+    const [time, setTime] = useState("");;
+    
+const handleRoomCheck = async (e) => {
+    if (e) e.preventDefault()
+    const queryParams = new URLSearchParams({
+        date,
+        building,
+        time,
+    });
+
+    const response = await fetch(`http://172.30.1.28:8080/api/reservation/available-room-list?${queryParams}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+    });
+    if (response.ok) {
+        const data = await response.json();
+        
+        // 데이터가 있을 때만 처리
+        if (data && data.length > 0) {
+            return data;
+        } else {
+            // 데이터가 없을 경우 아무것도 출력하지 않음
+            return null;  // 또는 빈 배열 [] 반환
+        }
+    } else {
+        return Promise.reject("Failed to fetch data");
+    }
   };
 
-
-function ReservationRoom() {
-    const [checkRoom, setCheckRoom] = useState([]);
-    
-    const handleRoomCheck = async(e) => {
-        e.preventDefault();
-        const response =await fetch(
-            "http://172.30.1.28:8080/api/rooms/available",
-            {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization : 'Bearer ' + sessionStorage.getItem("token")
-                },
-            }
-        ).json();
-    };
+  useEffect(() => {
+    handleRoomCheck()
+  }, []);
     return (
         <>
             <GlobalStyle />
@@ -113,17 +131,22 @@ function ReservationRoom() {
             </Desc>
             <Wrapper>
                 <Filter onSubmit={handleRoomCheck}>
-                    <FilterInput type="date" />
-                    <FilterSelect class="building">
+                    <FilterInput
+                        type="date"
+                        name="data"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
+                    />
+                    <FilterSelect name="building" value={building} onChange={(e) => setBuilding(e.target.value)}>
                         <option value>건물 선택</option>
-                        <option value="syallom">샬롬관</option>
-                        <option value="Gyeongcheon">경천관</option>
-                        <option value="insa">인사관</option>
-                        <option value="igong">이공관</option>
-                        <option value="cheoneun">천은관</option>
-                        <option value="yesul">예술관</option>
+                        <option value="샬롬관">샬롬관</option>
+                        <option value="경천관">경천관</option>
+                        <option value="인사관">인사관</option>
+                        <option value="이공관">이공관</option>
+                        <option value="천은관">천은관</option>
+                        <option value="예술관">예술관</option>
                     </FilterSelect>
-                    <FilterSelect class="time">
+                    <FilterSelect name="time" value={time} onChange={(e) => setTime(e.target.value)}>
                         <option value>시간 선택</option>
                         <option value="9">09:00</option>
                         <option value="10">10:00</option>
@@ -142,14 +165,14 @@ function ReservationRoom() {
                     <SubmitStyled type="submit" value="조회" />
                 </Filter>
                 
-                <Personnel>사용할 수 있는 강의실은 <PersonnelCount>{rooms.length}</PersonnelCount>개 입니다</Personnel>
+                <Personnel>사용할 수 있는 강의실은 <PersonnelCount>{checkRoom.length}</PersonnelCount>개 입니다</Personnel>
                 {/* {rooms.map((room, index) => (
                     <RoomStyled key={index}>
                     <RoomList rooms={[room]} />
                     </RoomStyled>
                 ))} */}
                 <RoomStyled>
-                    <RoomList rooms={rooms} />
+                    <RoomList rooms={checkRoom} />
                 </RoomStyled>
             </Wrapper>
         </>

@@ -15,6 +15,7 @@ const LoginBoxStyled = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: 200px;
 `;
 
 const LoginBoxContent = styled.div`

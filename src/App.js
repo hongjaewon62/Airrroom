@@ -8,6 +8,7 @@ import ReservationRoom from "./page/ReservationRoom";
 import AiRecommend from "./page/AiRecommend";
 import MySpace from "./page/MySpace";
 import TimeTable from "./page/TimeTable"
+import ReservationCheck from "./page/ReservationCheck";
 
 function App(props) {
   
@@ -23,6 +24,7 @@ function App(props) {
       <Route path="/ai-recommend" element={<AiRecommend />} />
       <Route path="/reservation" element={<ReservationRoom />} />
       <Route path="/timeTable" element={<TimeTable />} />
+      <Route path="/history" element={<ReservationCheck />} />
     </Routes>
     </BrowserRouter>
   );

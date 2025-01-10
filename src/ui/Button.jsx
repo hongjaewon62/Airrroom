@@ -12,10 +12,6 @@ const StyledButton = styled.button`
     border-radius: 8px;
     color: white;
     cursor: pointer;
-    &.logo {
-    font-size: 20px;
-    font-weight: bold;
-}
 `;
 
 function Button (props) {
