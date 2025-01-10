@@ -5,26 +5,56 @@ import rooms from './../data/rooms';
 import GlobalStyle from "../style/GlobalStyle";
 import useSWR from "swr";
 import {data} from "react-router-dom";
+import Lottie from "lottie-react";
+import loadingLottie from "../assets/lottie/eyes.json";
 
-const Desc = styled.div`
-    color:white;
+const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
-    font-size: 30px;
-    font-weight: 800;
+    padding: 20px;
 `;
 
-const RoomStyled = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    padding: 1.5rem;
-    transition: transform 0.3s;
-    margin-bottom: 1rem;
+const Title = styled.h1`
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+    margin: 30px 0;
 `;
+
+const RoomCardContainer = styled.div`
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+`;
+
+const RoomCard = styled.div`
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+    h3 {
+        color: #444;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #666;
+        margin: 5px 0;
+    }
+`;
+
+const StatusText = styled.div`
+    color: white;
+    font-size: 18px;
+    margin: 10px 0;
+`;
+
 
 const fetchRoom = url => (fetch(url, {
     method: 'GET'
@@ -90,9 +120,9 @@ Based on these coordinates, the current time (${new Date().toLocaleString()}), t
 
 
 function AiRecommend() {
-    const { data: timetableData, error, isLoading } = useSWR('http://localhost:8080/api/timetable', fetchTimeTable);
+    const { data: timetableData, error, isLoading } = useSWR('http://172.30.1.28:8080/api/timetable', fetchTimeTable);
 
-    const { data: availableRoom, error: availableRoomError, isLoading: roomLoading } = useSWR('http://localhost:8080/api/rooms/available', fetchRoom);
+    const { data: availableRoom, error: availableRoomError, isLoading: roomLoading } = useSWR('http://172.30.1.28:8080/api/rooms/available', fetchRoom);
 
     const { data: aiResponse, error: aiError, isLoading: aiLoading } = useSWR(
         (timetableData && availableRoom) ? ['https://api.openai.com/v1/chat/completions', timetableData, availableRoom] : null,
@@ -104,38 +134,35 @@ function AiRecommend() {
     );
 
 
-    if (isLoading || roomLoading || aiLoading) return <h1>Loading....</h1>;
+    if (isLoading || roomLoading || aiLoading) return (
+          <Lottie animationData={loadingLottie} />);
     if (error || availableRoomError || aiError) return <h1>Error occurred.</h1>;
     console.log(aiResponse);
 
     return (
         <>
         <GlobalStyle />
-        <Desc>
-            추천하는 강의실은 총 {rooms.length}개 입니다
-        </Desc>
-        <RoomStyled>
-            {aiResponse?.nearest && (
-                <div>
-                    <h2>현재 가까운 강의실:</h2>
-                    <ul>
-                        {aiResponse.nearest.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
-            )}
-            {aiResponse?.nearestFromNextCourse && (
-                <div>
-                    <h2>다음 수업에서 가까운 강의실:</h2>
-                    <ul>
-                        {aiResponse.nearestFromNextCourse.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
-            )}
-        </RoomStyled>
+        <Wrapper>
+                <Title>지금 내 위치에서 가장 가까워요!</Title>
+                <RoomCardContainer>
+                    {aiResponse?.nearest?.map((room, index) => (
+                        <RoomCard key={index}>
+                            <h3>{room}</h3>
+                            <p>현재 상태: 사용 가능</p>
+                        </RoomCard>
+                    ))}
+                </RoomCardContainer>
+
+                <Title>다음 강의실에 미리 가있을래요!</Title>
+                <RoomCardContainer>
+                    {aiResponse?.nearestFromNextCourse?.map((room, index) => (
+                        <RoomCard key={index}>
+                            <h3>{room}</h3>
+                            <p>현재 상태: 사용 가능</p>
+                        </RoomCard>
+                    ))}
+                </RoomCardContainer>
+        </Wrapper>
         </>
     );
 }
