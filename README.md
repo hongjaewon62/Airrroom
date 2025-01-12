@@ -42,7 +42,7 @@
 
 ## 스토리보드
 * [스토리보드 Figma](https://www.figma.com/design/oXMrb6Mug8L9iJ9S5KxDCc/AIRRROOM?node-id=0-1&t=eWPirFGS83soHuoh-1)
-<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/figma.png" width="60%" height="60" />
+<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/figma.png" width="60%" height="60%" />
 
 ## 기획
 <img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/planning.PNG" width="60%" height="60%" />
@@ -75,7 +75,7 @@
 
 **시간표 등록**
 
-<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/planning.PNG" width="70%" height="70%" />
+<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/timetable.PNG" width="70%" height="70%" />
 
 * 시간표를 등록하면 AI가 시간표를 기준으로 강의실을 추천합니다.
 
