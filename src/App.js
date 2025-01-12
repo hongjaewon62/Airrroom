@@ -13,7 +13,7 @@ import ReservationCheck from "./page/ReservationCheck";
 function App(props) {
   
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <NavBar />
     <Routes>
       <Route index element={<MainPage />} />
