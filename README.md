@@ -48,7 +48,7 @@
 <img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/figma.png" width="60%" height="60%" />
 
 ## 기획
-<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/planning.PNG" width="60%" height="60%" />
+<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/planning.PNG" width="80%" height="80%" />
 
 ## 서비스 소개
 **메인페이지**
