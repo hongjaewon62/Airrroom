@@ -41,36 +41,48 @@
 * AIRROOM은 복잡한 강의실 예약 과정을 간소화한 시스템입니다. 기존의 복잡한 절차를 없애고, 사용자가 실시간 예약 현황을 확인하며  예약할 수 있습니다. 또한, 빈 강의실을 쉽게 찾아 짧은 시간 동안 편안하게 쉴 수 있는 서비스입니다.
 
 ## 스토리보드
-* 스토리보드 Figma(https://www.figma.com/design/oXMrb6Mug8L9iJ9S5KxDCc/AIRRROOM?node-id=0-1&t=eWPirFGS83soHuoh-1)
-* 이미지
+* [스토리보드 Figma](https://www.figma.com/design/oXMrb6Mug8L9iJ9S5KxDCc/AIRRROOM?node-id=0-1&t=eWPirFGS83soHuoh-1)
+<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/figma.png" width="60%" height="60" />
 
 ## 기획
-<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/planning.PNG" width="70%" />
+<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/planning.PNG" width="60%" height="60%" />
 
 ## 서비스 소개
 **메인페이지**
+
 <img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/main.PNG" />
+
 * 회원가입, 로그인, 마이페이지, AI 강의실 추천, 강의실 조회 및 예약을 할 수 있습니다.
 
 **로그인, 회원가입**
-이미지
+
+<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/login.PNG" width="60%" height="60%" />
+
 * 이름과 아이디, 비밀번호를 입력 후 회원가입과 로그인을 할 수 있습니다.
 
 **AI 기반 강의실 추천**
-이미지
+
+<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/ai.PNG" width="70%" height="70%" />
+
 * 등록한 시간표를 기준으로 끝난 수업 강의실주변 빈 강의실, 다음 수업 강의실 주변 강의실을 추천합니다.
 
 **강의실 조회 및 예약**
-이미지
+
+<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/room.PNG" width="70%" height="70%" />
+
 * 예약할 수 있는 강의실 목록을 보여주고 클릭 시 예약합니다.
   * 검색만 가능하며, 예약은 시간부족으로 구현하지 못했습니다.
 
 **시간표 등록**
-이미지
+
+<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/planning.PNG" width="70%" height="70%" />
+
 * 시간표를 등록하면 AI가 시간표를 기준으로 강의실을 추천합니다.
 
 **강의실 예약 내역 조회**
-이미지
+
+<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/check.PNG" width="70%" height="70%" />
+
 * 강의실 예약 내역을 확인할 수 있습니다.
   * 시간 부족으로 예약을 구현하지 못해 내역 조회를 구현하지 못했습니다.
 
