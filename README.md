@@ -28,13 +28,13 @@
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white"/>
 
 ### 백엔드
-<img src="https://img.shields.io/badge/mysql-4479A1?style=flat-square&logo=react&logoColor=white"/>
-<img src="https://img.shields.io/badge/springboot-6DB33F?style=flat-square&logo=react&logoColor=white"/>
+<img src="https://img.shields.io/badge/mysql-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
+<img src="https://img.shields.io/badge/springboot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/>
 
 ## 기획 의도
-* 번거로운 기존 강의실 예약 시스템
+* **번거로운 기존 강의실 예약 시스템**
   * 연락 -> 신청 -> 확인 -> 승인 -> 확정 등 번거로운 강의실 예약과정을 빠르고 간편하게 할 수 있고, 사용자는 실시간으로 예약 현황을 확인하고, 최소한의 클릭만으로 예약을 완료할 수 있습니다.
-* 잠깐 쉴 수 있는 빈 강의실 찾기 어려움
+* **잠깐 쉴 수 있는 빈 강의실 찾기 어려움**
   * 다음 수업이 끝나기 전에 도착한다면 문 앞에서 기다려야 하지만 등록된 강의실 시간표를 기반으로 수업을 하고 있지 않은 빈 강의실을 쉽게 찾아 잠깐 쉴 수 있습니다.
 
 # 프로그램 소개
@@ -87,9 +87,9 @@
   * 시간 부족으로 예약을 구현하지 못해 내역 조회를 구현하지 못했습니다.
 
     ### 기능 상세 소개
-    * 로그인, 회원가입* : fetch 함수를 사용해 서버의 데이터를 받고 보낼 수 있습니다.
-    * AI 기반 강의실 추천* : 등록한 시간표 데이터를 받아 OpenAI가 강의실을 추천합니다.
-    * 강의실 검색* : fetch 함수와 URLSearchParams으로 날짜, 건물, 시간을 선택해 검색할 수 있습니다.
+    * **로그인, 회원가입** : fetch 함수를 사용해 서버의 데이터를 받고 보낼 수 있습니다.
+    * **AI 기반 강의실 추천** : 등록한 시간표 데이터를 받아 OpenAI가 강의실을 추천합니다.
+    * **강의실 검색** : fetch 함수와 URLSearchParams으로 날짜, 건물, 시간을 선택해 검색할 수 있습니다.
 
 ## 팀원별 구현 부분
 * 김이레
