@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Airrroom/static/css/main.7d521574.css",
+    "main.js": "/Airrroom/static/js/main.d6d5b8b0.js",
+    "static/js/488.d5ed3fa5.chunk.js": "/Airrroom/static/js/488.d5ed3fa5.chunk.js",
+    "index.html": "/Airrroom/index.html",
+    "main.7d521574.css.map": "/Airrroom/static/css/main.7d521574.css.map",
+    "main.d6d5b8b0.js.map": "/Airrroom/static/js/main.d6d5b8b0.js.map",
+    "488.d5ed3fa5.chunk.js.map": "/Airrroom/static/js/488.d5ed3fa5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d521574.css",
+    "static/js/main.d6d5b8b0.js"
+  ]
+}
