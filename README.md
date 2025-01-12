@@ -1,4 +1,5 @@
-<h1 style="display: inline;">2025 Kangnam Univ Hackathon: ‘강냉톤’</h1><h2 style="display: inline;">(2025.1.10 ~ 2025.1.11)</h2>
+# 2025 Kangnam Univ Hackathon: ‘강냉톤’
+## (2025.1.10 ~ 2025.1.11)
 
 ## AIRRROOM  대학교 강의실 예약 및 AI 추천 서비스
 
