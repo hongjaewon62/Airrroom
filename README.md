@@ -1,16 +1,17 @@
-# 2025 Kangnam Univ Hackathon: ‘강냉톤’(2025.1.10 ~ 2025.1.11)
+# 2025 Kangnam Univ Hackathon: ‘강냉톤’
+#(2025.1.10 ~ 2025.1.11)
 ## AIRRROOM
 ### 대학교 강의실 예약 및 AI 추천 서비스
 
 # 프로젝트 정보
 ## 팀원
 **기획**
-* 김이레(https://github.com)
-* 이유빈(https://github.com/yuvvinn)
+* [김이레](https://github.com)
+* [이유빈](https://github.com/yuvvinn)
 
 **디자인**
-* 김이레(https://github.com)
-* 이유빈(https://github.com/yuvvinn)
+* [김이레](https://github.com)
+* [이유빈](https://github.com/yuvvinn)
 
 **백엔드개발**
 * [김진석](https://github.com/seooooooooook)
@@ -19,12 +20,13 @@
 * [김진석](https://github.com/seooooooooook)
 * [홍재원](https://github.com/hongjaewon62)
 
-* 백엔드 깃허브 : [백엔드 깃허브](https://github.com/seooooooooook/airroom)
-* 프론드 깃허브 : [프론트 깃허브](https://github.com/hongjaewon62/Airrroom)
+* 백엔드 깃허브 : [백엔드 레포지토리](https://github.com/seooooooooook/airroom)
+* 프론드 깃허브 : [프론트 레포지토리](https://github.com/hongjaewon62/Airrroom)
 
 ## 사용 기술
 ### 프론트
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white"/>
+
 ### 백엔드
 <img src="https://img.shields.io/badge/mysql-4479A1?style=flat-square&logo=react&logoColor=white"/>
 <img src="https://img.shields.io/badge/springboot-6DB33F?style=flat-square&logo=react&logoColor=white"/>
@@ -43,31 +45,31 @@
 * 이미지
 
 ## 기획
-* 이미지
+<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/planning.PNG" width="70%" />
 
 ## 서비스 소개
-*메인페이지*
-이미지
+**메인페이지**
+<img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/main.PNG" />
 * 회원가입, 로그인, 마이페이지, AI 강의실 추천, 강의실 조회 및 예약을 할 수 있습니다.
 
-*로그인, 회원가입*
+**로그인, 회원가입**
 이미지
 * 이름과 아이디, 비밀번호를 입력 후 회원가입과 로그인을 할 수 있습니다.
 
-*AI 기반 강의실 추천*
+**AI 기반 강의실 추천**
 이미지
 * 등록한 시간표를 기준으로 끝난 수업 강의실주변 빈 강의실, 다음 수업 강의실 주변 강의실을 추천합니다.
 
-* 강의실 조회 및 예약*
+**강의실 조회 및 예약**
 이미지
 * 예약할 수 있는 강의실 목록을 보여주고 클릭 시 예약합니다.
   * 검색만 가능하며, 예약은 시간부족으로 구현하지 못했습니다.
 
-*시간표 등록*
+**시간표 등록**
 이미지
 * 시간표를 등록하면 AI가 시간표를 기준으로 강의실을 추천합니다.
 
-*강의실 예약 내역 조회*
+**강의실 예약 내역 조회**
 이미지
 * 강의실 예약 내역을 확인할 수 있습니다.
   * 시간 부족으로 예약을 구현하지 못해 내역 조회를 구현하지 못했습니다.
