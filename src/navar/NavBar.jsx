@@ -16,6 +16,20 @@ const Wrapper = styled.div`
   } 
 `;
 
+const Logo = styled.div`
+    background: transparent;
+    border: none;
+    font-weight: 1000;
+    float: left;
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 24px;
+    border-width: 1px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+`;
+
 function NavBar() {
     const navigate = useNavigate();
 
@@ -34,10 +48,15 @@ function NavBar() {
                 //setSignActive(true);
                 navigate("/signUp")
             }}></Button>
-            <div className="left-section">
-                <Button className="logo" title="AIRRROOM" onClick={() => {
+            <div>
+                {/* <Button className="logo" title="AIRRROOM" onClick={() => {
                     navigate("/AIRRROOM");
-                }}></Button>
+                }}></Button> */}
+                <Logo onClick={() => {
+                    navigate("/AIRRROOM");
+                }}>
+                    AIRRROOM
+                </Logo>
             </div>
         </Wrapper>
         {/* onClick={() => {setAcvite(false)}}  */}
