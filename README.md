@@ -52,7 +52,7 @@
 
 ## 서비스 소개
 **메인페이지**
-
+[깃허브 페이지 보기](https://hongjaewon62.github.io/Airrroom/)
 <img src="https://github.com/hongjaewon62/Airrroom/blob/main/ReadmeImg/main.PNG" />
 
 * 회원가입, 로그인, 마이페이지, AI 강의실 추천, 강의실 조회 및 예약을 할 수 있습니다.
