@@ -20,8 +20,8 @@
 * [김진석](https://github.com/seooooooooook)
 * [홍재원](https://github.com/hongjaewon62)
 
-* 백엔드 깃허브 : [백엔드 레포지토리](https://github.com/seooooooooook/airroom)
-* 프론드 깃허브 : [프론트 레포지토리](https://github.com/hongjaewon62/Airrroom)
+* 백엔드 : [백엔드 레포지토리](https://github.com/seooooooooook/airroom)
+* 프론드 : [프론트 레포지토리](https://github.com/hongjaewon62/Airrroom)
 
 ## 사용 기술
 ### 프론트
